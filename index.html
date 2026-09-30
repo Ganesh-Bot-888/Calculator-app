@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pro Calculator & Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pro Calculator & Converter</h1>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌓 Dark Mode</button>
+
+    <div class="tabs">
+      <button onclick="showTab('calc')">Calculator</button>
+      <button onclick="showTab('convert')">Converter</button>
+    </div>
+
+    <!-- Calculator -->
+    <div id="calc" class="tab-content">
+      <input type="text" id="display" disabled>
+      <div class="buttons">
+        <button onclick="clearDisplay()" class="clear">C</button>
+        <button onclick="appendValue('(')">(</button>
+        <button onclick="appendValue(')')">)</button>
+        <button onclick="appendValue('/')" class="operator">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')" class="operator">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')" class="operator">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')" class="operator">+</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="backspace()">⌫</button>
+      </div>
+    </div>
+
+    <!-- Converter -->
+    <div id="convert" class="tab-content hidden">
+      <div class="converter">
+        <h3>Length Converter (m ↔ ft)</h3>
+        <input type="number" id="meters" placeholder="Meters" oninput="convertLength('m')">
+        <input type="number" id="feet" placeholder="Feet" oninput="convertLength('ft')">
+
+        <h3>Weight Converter (kg ↔ lb)</h3>
+        <input type="number" id="kg" placeholder="Kilograms" oninput="convertWeight('kg')">
+        <input type="number" id="lb" placeholder="Pounds" oninput="convertWeight('lb')">
+
+        <h3>Temperature Converter (°C ↔ °F)</h3>
+        <input type="number" id="celsius" placeholder="Celsius" oninput="convertTemp('c')">
+        <input type="number" id="fahrenheit" placeholder="Fahrenheit" oninput="convertTemp('f')">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
